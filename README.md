@@ -10,8 +10,7 @@
   <img src="images/RSLab_logo_LRn.jpg" alt="Affiliation Logo" width="35%">
 </p>
 
-📢 To be presented at ***SPIE Sensors + Imaging 2025***,  
-Remote Sensing for Agriculture, Ecosystems, and Hydrology XXVII
+📢 **Oral** presentation at ***SPIE Sensors + Imaging 2025***, Remote Sensing for Agriculture, Ecosystems, and Hydrology XXVII
 
 
 
