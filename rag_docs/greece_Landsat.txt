@@ -1,0 +1,71 @@
+Title: Estimating Chlorophyll-a of Inland Water Bodies in Greece Based on Landsat Data
+
+Authors: Vassiliki Markogianni, Dionissios Kalivas, George P. Petropoulos, Elias Dimitriou
+
+Contact: vmarkogianni@hcmr.gr
+
+Published: Remote Sensing, 2020, 12, 2087
+
+Keywords: Landsat, chlorophyll-a, PCA, MLR analysis, lakes, WFD, Greece, water quality, remote sensing
+
+Abstract:
+This study proposes a methodological framework for quantifying chlorophyll-a (Chl-a) pigments in Greek inland waters using Landsat 7 ETM+ and Landsat 8 OLI satellite data. The approach involves stepwise multiple regression (MLR) analysis and principal component analysis (PCA) to explore relationships between Chl-a and lake characteristics (natural/artificial, typology, climate, season). The method was tested on 50 Greek lakes (2013–2018) as part of the National Lake Network Monitoring under the Water Framework Directive (WFD). The results show that Landsat data, combined with the proposed technique, can estimate log-transformed Chl-a with good accuracy, especially when models are developed separately for natural and artificial lakes.
+
+Key Concepts and Methodology:
+
+Chlorophyll-a (Chl-a) is a key indicator of lake trophic state and water quality.
+Traditional in situ sampling is accurate but limited in spatial/temporal coverage.
+Remote sensing (RS) with Landsat provides regional-scale, repeatable Chl-a estimates.
+The study uses stepwise multiple regression (MLR) to relate in situ Chl-a to Landsat reflectance and band ratios.
+Principal component analysis (PCA) identifies key factors affecting Chl-a: lake type (natural/artificial), typology, climate, and season.
+Models are developed for all lakes, and separately for natural and artificial lakes, using selected band ratios and transformations.
+Study Area and Data:
+
+50 Greek lakes (natural and artificial), monitored under the WFD.
+In situ Chl-a data (2013–2018), measured spectrophotometrically.
+296 Landsat images (Landsat 7 ETM+ and Landsat 8 OLI), pre-processed for TOA reflectance and atmospheric correction (DOS1 method).
+Cloud masking and correction for Landsat 7 scan line errors applied.
+Statistical Analysis:
+
+Basic statistics: mean, median, standard deviation, min/max, skewness, kurtosis for Chl-a.
+PCA used to identify main factors affecting Chl-a variance.
+Stepwise MLR used to develop Chl-a estimation models using band ratios and indices.
+Validation with independent datasets (20% holdout and 2018 data).
+Key Results:
+
+Natural lakes generally have higher Chl-a than artificial lakes.
+PCA shows lake type and typology are the most significant factors for Chl-a variance, followed by season.
+Several band ratios and indices (e.g., blue/green, red/blue, ln red/ln SWIR2) are strong predictors of Chl-a.
+Separate models for natural and artificial lakes outperform a general model.
+Formulas (all in plain text):
+
+General model for all lakes (Model 1A):
+log Chl-a = 3.599 - 0.63 * (red / blue) - 2.183 * (ln red / ln SWIR2)
+
+Model for natural lakes (Model 2A):
+log Chl-a = 4.443 - 1.421 * (green / blue) - 3.454 * (ln swir2 / ln red) + 1.304 * (red / green)
+
+Model for artificial lakes (Model 2B):
+log Chl-a = 2.919 - 2.011 * (ln swir1 / ln red) + 1.449 * (green / red) - 1.441 * (ln blue / ln red)
+
+Where:
+
+log Chl-a is the base-10 logarithm of chlorophyll-a concentration (µg/L)
+red, green, blue, swir1, swir2 are the reflectance values in the respective Landsat bands
+ln is the natural logarithm
+Validation statistics:
+
+For Model 1A: R = 0.65, RMSE = 1.85 µg/L (general model)
+For Model 2A (natural lakes): R = 0.78, RMSE = 1.3 µg/L
+For Model 2B (artificial lakes): R = 0.76, RMSE = 1.29 µg/L
+Limitations and Considerations:
+
+The DOS1 atmospheric correction was not independently validated.
+Some uncertainty in sampling point locations and possible land pixel contamination.
+Empirical models are most reliable within the range of the training data.
+Combining EO with in situ sampling is recommended for best accuracy.
+Conclusions:
+
+Landsat-based models can reliably estimate Chl-a in Greek lakes, especially when tailored to lake type.
+The approach supports large-scale, continuous water quality monitoring under the WFD.
+The methodology is applicable to other regions with similar data and monitoring needs.

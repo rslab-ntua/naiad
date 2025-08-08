@@ -1,0 +1,116 @@
+Estimation of Chlorophyll-a Concentrations in Small Water Bodies: Comparison of Fused Gaofen-6 and Sentinel-2 Sensors
+
+Authors: Jiarui Shi, Qian Shen, Yue Yao, Junsheng Li, Fu Chen, Ru Wang, Wenting Xu, Zuoyan Gao, Libing Wang, Yuting Zhou
+Journal: Remote Sensing, 2022, 14, 229
+
+Abstract & Purpose
+Chlorophyll-a (Chla) concentration is a key indicator for water quality and eutrophication.
+Monitoring Chla in small water bodies (streams, ponds, small lakes) is challenging due to their narrow, fragmented nature and the limited spatial resolution of most free satellite sensors.
+This study fuses Gaofen-6 images to obtain 2 m resolution, 8-band images and compares their performance to Sentinel-2 (10 m, 13 bands) for Chla estimation.
+Five semi-empirical and four machine learning models are compared using simulated reflectance.
+The extreme gradient boosting tree (BST) model is the most accurate:
+For Sentinel-2: MRE = 9.03%, RMSE = 4.5 mg/m³
+For fused Gaofen-6: MRE = 6.73%, RMSE = 3.26 mg/m³
+Fused Gaofen-6 offers higher spatial resolution; Sentinel-2 offers higher temporal resolution.
+Study Area & Data
+Location: Beijing, China (lat 39.4°N–41.6°N, long 115.7°E–117.4°E)
+Water bodies: Jima River, Yongding River, North Canal, Chaobai River, Ji Canal, Miyun Reservoir, Guanting Reservoir, Huairou Reservoir, Haizi Reservoir, and several urban ponds.
+Field data: 82 water body spectra from six field surveys (2016–2019) at various sites.
+Satellite data:
+Gaofen-6 PMS (2 m, 4 bands: blue, green, red, NIR)
+Gaofen-6 WFV (16 m, 8 bands: aerosol, blue, green, yellow, red, red-edge I, red-edge II, NIR)
+Sentinel-2 MSI (10–60 m, 13 bands: aerosol, blue, green, red, red-edge I/II/III, NIR, narrow NIR, water vapor, SWIR, cirrus)
+Methods
+Field Measurements
+Remote sensing reflectance (Rrs):
+Rrs(lambda) = [Lu(lambda) - rsky(lambda) * Lsky(lambda)] / [Lp(lambda) * pi / rho_p(lambda)]
+Lu(lambda): upwelling radiance above water
+rsky(lambda): Fresnel reflection coefficient
+Lsky(lambda): sky radiance
+Lp(lambda): radiance of reference panel
+rho_p(lambda): reflectance of reference panel (~30%)
+Spectral simulation for satellite bands:
+Rrs(lambda_i) = [integral from lambda_min to lambda_max of Rrs(lambda) * f(lambda) d(lambda)] / [integral from lambda_min to lambda_max of f(lambda) d(lambda)]
+f(lambda): relative spectral response function of the band
+Chlorophyll-a measurement:
+Water filtered, frozen, extracted in hot ethanol, acidified, and absorbance measured at 665 and 750 nm.
+Image Processing
+Fused Gaofen-6:
+Image fusion (PAN + MSS), geometric correction (Long’s method), atmospheric correction (relative radiation normalization using Sentinel-2 as reference).
+After correction, 7 bands used: blue (450–520 nm), green (520–590 nm), red (630–690 nm), NIR (770–890 nm), red-edge I (690–730 nm), red-edge II (730–770 nm), coastal aerosol (400–450 nm).
+Sentinel-2:
+Atmospheric correction using Sen2Cor.
+Accuracy Metrics
+Mean Relative Error (MRE):
+MRE = (1/n) * sum over n of |Ri - Rj| / Rj * 100%
+Ri: estimated Chla
+Rj: in situ Chla
+n: number of samples
+Root Mean Square Error (RMSE):
+RMSE = sqrt( sum over n of (Ri - Rj)^2 / n )
+Modeling Approaches
+Semi-empirical models:
+Used Rrs(675 nm)/Rrs(705 nm) as main independent variable.
+Five model forms: linear, exponential, logarithmic, power, quadratic.
+Example formulas for fused Gaofen-6:
+Linear: Chla = -65.788453 * x + 99.5654
+Exponential: Chla = 1485.8 * exp(-3.65197 * x)
+Logarithmic: Chla = 37.9778 * x^4.0432
+Power: Chla = -83.5964 * log(x) + 35.9646
+Quadratic: Chla = 186.537 * x^2 - 511.3751 * x + 362.781
+Example formulas for Sentinel-2:
+Linear: Chla = -83.028 * x + 107.0218
+Exponential: Chla = 1139.618 * exp(-3.98529 * x)
+Logarithmic: Chla = 20.76 * x^3.6926
+Power: Chla = -85.2146 * log(x) + 23.37083
+Quadratic: Chla = 119.624 * x^2 - 485.476 * x + 306.563
+Machine learning models:
+Multiple Linear Regression (LR), Bayesian Regression (BR), Extreme Gradient Boosting Tree (BST), Artificial Neural Network (ANN).
+Input features: combinations of 7 reflectance bands, red-edge/red ratios, and red/red-edge ratios (up to 9 features).
+Best performance with 9 inputs (7 bands + 2 ratios).
+Results
+Semi-Empirical Model Performance
+Fused Gaofen-6:
+Quadratic model best: MRE = 11.9%, RMSE = 6.04 mg/m³
+Sentinel-2:
+Quadratic model best: MRE = 10.64%, RMSE = 5.75 mg/m³
+Machine Learning Model Performance
+Fused Gaofen-6:
+BST model best: MRE = 8.76%, RMSE = 3.36 mg/m³ (validation set)
+Sentinel-2:
+BST model best: MRE = 11.78%, RMSE = 5.75 mg/m³ (validation set)
+Image-Based Validation
+BST model on images:
+Fused Gaofen-6: MRE = 6.73%, RMSE = 3.26 mg/m³
+Sentinel-2: MRE = 9.03%, RMSE = 4.5 mg/m³
+Quadratic function model on images:
+MRE and RMSE > 50% and 28 mg/m³ (not suitable for image-based estimation)
+Comparison in Ponds and Rivers
+Fused Gaofen-6 provides more detailed spatial information, especially in small ponds and narrow rivers (<10 m wide), where Sentinel-2 cannot resolve water bodies.
+Both sensors provide consistent Chla estimates in larger water bodies, with TMRE (total mean relative error) below 15%.
+Temporal Coverage
+Fused Gaofen-6: variable, meets quarterly observation frequency.
+Sentinel-2: fixed orbit, monthly coverage.
+Joint use increases monitoring frequency for small water bodies.
+Key Formulas (Plain Text)
+Remote sensing reflectance:
+Rrs(lambda) = [Lu(lambda) - rsky(lambda) * Lsky(lambda)] / [Lp(lambda) * pi / rho_p(lambda)]
+Band simulation:
+Rrs(lambda_i) = [integral from lambda_min to lambda_max of Rrs(lambda) * f(lambda) d(lambda)] / [integral from lambda_min to lambda_max of f(lambda) d(lambda)]
+Mean Relative Error (MRE):
+MRE = (1/n) * sum over n of |Ri - Rj| / Rj * 100%
+Root Mean Square Error (RMSE):
+RMSE = sqrt( sum over n of (Ri - Rj)^2 / n )
+Example quadratic model for fused Gaofen-6:
+Chla = 186.537 * x^2 - 511.3751 * x + 362.781
+(where x = Rrs(675 nm) / Rrs(705 nm))
+Example quadratic model for Sentinel-2:
+Chla = 119.624 * x^2 - 485.476 * x + 306.563
+(where x = Rrs(675 nm) / Rrs(705 nm))
+Example BST model:
+(No explicit formula; model is trained using 9 input features: 7 bands + 2 ratios)
+Conclusions
+Both fused Gaofen-6 and Sentinel-2 can estimate Chla in small water bodies, with the BST machine learning model providing the best accuracy.
+Fused Gaofen-6 is superior for spatial detail (2 m), enabling monitoring of smaller/narrower water bodies.
+Sentinel-2 is superior for temporal frequency (monthly).
+Joint use of both sensors is recommended for comprehensive monitoring.

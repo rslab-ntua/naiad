@@ -1,0 +1,65 @@
+Dataset: Chlorophyll-a concentrations for Lake Trichonida from 2013 to 2022.
+
+Each entry includes:
+- Date (system:time_start)
+- Chlorophyll_a (μg/L)
+- Year
+
+Detailed rows for 2013:
+Row 1: system:time_start: 2013-05-17 00:00:00, Chlorophyll_a: 1.153, year: 2013.
+Row 2: system:time_start: 2013-07-15 00:00:00, Chlorophyll_a: 5.169, year: 2013.
+Row 3: system:time_start: 2013-08-13 00:00:00, Chlorophyll_a: 0.558, year: 2013.
+Row 4: system:time_start: 2013-10-14 00:00:00, Chlorophyll_a: 2.045, year: 2013.
+
+Detailed rows for 2014:
+Row 1: system:time_start: 2014-06-25 00:00:00, Chlorophyll_a: 2.411, year: 2014.
+Row 2: system:time_start: 2014-07-29 00:00:00, Chlorophyll_a: 0.758, year: 2014.
+Row 3: system:time_start: 2014-08-12 00:00:00, Chlorophyll_a: 2.606, year: 2014.
+Row 4: system:time_start: 2014-09-16 00:00:00, Chlorophyll_a: 4.396, year: 2014.
+
+Detailed rows for 2015:
+Row 1: system:time_start: 2015-06-19 00:00:00, Chlorophyll_a: 2.093, year: 2015.
+Row 2: system:time_start: 2015-08-17 00:00:00, Chlorophyll_a: 0.510, year: 2015.
+Row 3: system:time_start: 2015-09-16 00:00:00, Chlorophyll_a: 2.350, year: 2015.
+Row 4: system:time_start: 2015-10-13 00:00:00, Chlorophyll_a: 2.749, year: 2015.
+
+Detailed rows for 2016:
+Row 1: system:time_start: 2016-07-27 00:00:00, Chlorophyll_a: 3.610, year: 2016.
+Row 2: system:time_start: 2016-08-23 00:00:00, Chlorophyll_a: 1.060, year: 2016.
+
+Detailed rows for 2017:
+Row 1: system:time_start: 2017-06-27 00:00:00, Chlorophyll_a: 1.860, year: 2017.
+Row 2: system:time_start: 2017-08-22 00:00:00, Chlorophyll_a: 2.770, year: 2017.
+Row 3: system:time_start: 2017-09-05 00:00:00, Chlorophyll_a: 3.630, year: 2017.
+
+Detailed rows for 2018:
+Row 1: system:time_start: 2018-06-12 00:00:00, Chlorophyll_a: 3.970, year: 2018.
+Row 2: system:time_start: 2018-07-17 00:00:00, Chlorophyll_a: 1.470, year: 2018.
+Row 3: system:time_start: 2018-08-21 00:00:00, Chlorophyll_a: 3.710, year: 2018.
+
+Detailed rows for 2019:
+Row 1: system:time_start: 2019-01-24 00:00:00, Chlorophyll_a: 3.940, year: 2019.
+Row 2: system:time_start: 2019-07-08 00:00:00, Chlorophyll_a: 1.730, year: 2019.
+Row 3: system:time_start: 2019-08-21 00:00:00, Chlorophyll_a: 4.250, year: 2019.
+Row 4: system:time_start: 2019-09-16 00:00:00, Chlorophyll_a: 0.900, year: 2019.
+
+Detailed rows for 2020:
+Row 1: system:time_start: 2020-06-15 00:00:00, Chlorophyll_a: 0.500, year: 2020.
+Row 2: system:time_start: 2020-07-28 00:00:00, Chlorophyll_a: 0.640, year: 2020.
+Row 3: system:time_start: 2020-08-18 00:00:00, Chlorophyll_a: 3.040, year: 2020.
+Row 4: system:time_start: 2020-09-29 00:00:00, Chlorophyll_a: 2.040, year: 2020.
+
+Detailed rows for 2021:
+Row 1: system:time_start: 2021-06-15 00:00:00, Chlorophyll_a: 0.230, year: 2021.
+Row 2: system:time_start: 2021-07-05 00:00:00, Chlorophyll_a: 0.370, year: 2021.
+Row 3: system:time_start: 2021-08-03 00:00:00, Chlorophyll_a: 0.410, year: 2021.
+
+Detailed rows for 2022:
+Row 1: system:time_start: 2022-07-05 00:00:00, Chlorophyll_a: 2.230, year: 2022.
+Row 2: system:time_start: 2022-08-30 00:00:00, Chlorophyll_a: 2.160, year: 2022.
+
+Detailed rows for 2023:
+Row 1: system:time_start: 2023-06-21 00:00:00, Chlorophyll_a: 0.460, year: 2023.
+Row 2: system:time_start: 2023-07-25 00:00:00, Chlorophyll_a: 0.410, year: 2023.
+Row 3: system:time_start: 2023-08-29 00:00:00, Chlorophyll_a: 0.740, year: 2023.
+Row 4: system:time_start: 2023-09-26 00:00:00, Chlorophyll_a: 1.660, year: 2023.

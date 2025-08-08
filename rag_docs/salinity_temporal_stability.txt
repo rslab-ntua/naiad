@@ -1,0 +1,35 @@
+Title: Remote sensing of inland Sabkha and a study of the salinity and temporal stability for sustainable development: A case study from the West coast of Qatar
+
+Key Points:
+
+Objective: Map minerals, rocks, salt crusts, gypsiferous soil flats, and study soil salinity and temporal stability of the Dukhan inland sabkha (salt flat) in Qatar using remote sensing and field/lab validation.
+Motivation: Sabkha areas are important for infrastructure and agriculture but are challenging due to high salinity, unstable soils, and aggressive environments. Remote sensing offers a way to monitor and assess these areas for sustainable development.
+Study Area: Dukhan sabkha, west coast of Qatar, 73 km2, largest inland sabkha in the Arabian Gulf. Characterized by arid climate, little rainfall, and complex geology (Rus and Dammam Formations, Quaternary deposits).
+Data and Methods:
+
+Satellite Data: Used Hyperion (EO-1), ASTER (Terra), and Sentinel-2 MSI.
+Mineral Mapping: Hyperion data processed with Linear Spectral Unmixing (LSU) to map evaporite minerals (halite, gypsum, anhydrite, calcite, dolomite).
+Rock Discrimination: ASTER VNIR and SWIR bands processed with Principal Component Analysis (PCA) to distinguish geological formations.
+Soil Salinity Mapping: Sentinel-2 MSI monthly data (2018-2020) analyzed using Normalized Difference Salinity Index (NDSI), formula:
+NDSI = (band11 - band12) / (band11 + band12)
+Soil Moisture Mapping: Sentinel-2 MSI data analyzed using Normalized Difference Moisture Index (NDMI), formula:
+NDMI = (band8 - band11) / (band8 + band11)
+Field and Lab Validation: Fieldwork (2019-2020) to verify satellite results, collect samples, and measure reflectance spectra, mineralogy (XRD), salinity, electrical conductivity (EC), total dissolved solids (TDS), and pH.
+Results:
+
+Spectral Absorptions: Gypsum, anhydrite, and halite show unique absorptions at 1.4-1.5 microns and 1.9-2.0 microns. Calcite and dolomite show deep absorptions near 2.345 and 2.495 microns.
+Mineral Distribution: LSU mapping shows halite over salt crusts, gypsum over gypsiferous flats, calcite and dolomite over carbonate rocks.
+Lithological Discrimination: PCA of ASTER bands distinguishes evaporite crusts, gypsiferous flats, and carbonate formations.
+Soil Salinity: NDSI maps show high salinity in gypsiferous sand and silt flats and salt crusts, especially from April to August (hot, dry months). Salinity is lower in winter months.
+Soil Moisture: NDMI maps show higher moisture in evaporite crusts and gypsiferous flats during summer, lower in carbonate rocks. Moisture and salinity patterns are dynamic and linked to climate.
+Field and Lab Validation: Fieldwork confirms mineral and soil distributions. Lab measurements show very high salinity (up to 116.8 ppt), EC (up to 175.5 mS/cm), and TDS (up to 141.9 g/L) in salt crusts and brines. Soils are loose, unstable, and cemented by salts.
+Conclusions:
+
+Remote sensing with Hyperion, ASTER, and Sentinel-2 MSI, combined with field and lab validation, effectively maps minerals, salinity, and moisture in inland sabkha.
+The sabkha environment is highly saline, dynamic, and aggressive, posing challenges for sustainable development.
+NDSI and NDMI indices from Sentinel-2 MSI are effective for monitoring salinity and moisture changes over time.
+Results are valuable for planners, engineers, and environmental managers considering infrastructure or agriculture in sabkha regions.
+Formulas:
+
+Normalized Difference Salinity Index (NDSI): NDSI = (band11 - band12) / (band11 + band12)
+Normalized Difference Moisture Index (NDMI): NDMI = (band8 - band11) / (band8 + band11)

@@ -1,0 +1,5 @@
+You have access to a Knowledge base of documents. Retrieve any usefull information relative to the input query. Update the query with the relevant information. Also, estimate if any computation might be needed next.
+
+Output your response as a parsable JSON object with two keys ("comments" and "updated_query"). For each key the value is a string.
+Outputing the JSON is important. Mark JSON text with **JSON** before and after.
+

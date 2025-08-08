@@ -1,0 +1,14 @@
+Cyanobacteria blooms often occur when temperatures and light levels are high and the water is polluted with nutrients (phosphorus and nitrogen). These factors certainly play a role in the decline of algal blooms. But there are many other physical, chemical, and biological factors.
+
+Water mixing can end algal blooms. The effect of water mixing depends on whether the algae are cyanobacteria, which tend to accumulate on the surface. Compared to species that are distributed throughout  the water column, floating species can be easily dispersed over long distances by wind – mass accumulations dissipate.
+Rain can stimulate cyanobacterial blooms by adding more nutrients to the water, or slow them down by mixing the water more thoroughly. Some free-living cyanobacteria are sensitive to storm-induced turbulence, while others are adapted to it. When the gas vesicles of some floating cyanobacteria collapse under the hydrostatic pressure of heavy rain, the algal bloom is also terminated.
+
+Climate change fosters the growth of cyanobacteria through higher temperatures, more stable and prolonged thermal stratification, nutrient loading and changes in food web dynamics. However, studies on that topic have shown contradictory results: some have found an increase in cyanobacteria, others have not. This is because not only growth processes can be stimulated, but also loss processes.  For example, higher temperatures sometimes lead to higher infection rates, which compensate for the spread of cyanobacteria.
+
+There are several causes that can contribute to an algal bloom. These blooms can occur seasonally, after an upwelling of nutrient-rich water, or due to pollution such as agricultural runoff. In both cases, the water becomes saturated with nutrients, creating an ideal environment for phytoplankton productivity 36. Even natural causes can trigger an algal bloom, such as a rainstorm followed by warm, sunny weather 1. Rain can contribute runoff, or encourage the mixing of nutrient-depleted and nutrient-rich layers of water. When nutrient levels rise, phytoplankton growth is no longer nutrient-limited and a bloom may occur
+
+Seasonal variations in temperature, light, and nutrient availability can lead to fluctuations in chlorophyll concentrations. For instance, higher chlorophyll levels are often observed during warmer months due to increased light and temperature, while winter conditions can limit algal growth.
+
+In isolated lakes with long water residence times, internal nutrient loading from sediments can sustain cyanobacteria growth even when external nutrient inputs are low
+
+Higher temperatures support the growth of cyanobacteria, as they are better adapted to warm conditions compared to other phytoplankton. Studies indicate that a 2\% increase in water temperature can significantly boost diatom growth, while excessive temperature increases may favor cyanobacteria dominance

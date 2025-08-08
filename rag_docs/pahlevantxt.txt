@@ -1,0 +1,33 @@
+Cleaned Version: Simultaneous Retrieval of Water Quality Indicators from Landsat-8, Sentinel-2, and Sentinel-3
+Overview
+This work presents a machine learning approach (Mixture Density Networks, MDNs) for retrieving three key water quality (WQ) indicators from satellite data:
+
+Chlorophyll-a (Chla)
+Total Suspended Solids (TSS)
+Absorption by Colored Dissolved Organic Matter at 440 nm (acdom(440))
+The method is designed to work across data from three major satellite missions: Landsat-8 (OLI), Sentinel-2 (MSI), and Sentinel-3 (OLCI). The goal is to create consistent, global water quality products from multi-source satellite imagery.
+
+Key Points
+Challenge: Different satellites have varying sensor characteristics, making it hard to create unified water quality products.
+Solution: Use a machine learning model (MDN) trained on a large, diverse set of in situ measurements to predict Chla, TSS, and acdom(440) from satellite reflectance data.
+Performance: The MDN model outperforms traditional algorithms, especially for TSS and acdom(440), and provides consistent results across different satellites within known uncertainty ranges.
+Data: The model is trained on a global dataset of paired satellite reflectance and in situ water quality measurements, with data from over 40 sources worldwide.
+Handling Missing Data: The model uses multiple imputation to handle missing values in the training data, improving robustness.
+Validation: Two main validation methods are used:
+Hold-out: Randomly splits data into training and testing sets.
+Leave-one-out (LOO): Trains on all but one data source and tests on the excluded source, repeated for all sources.
+Uncertainty: The model provides uncertainty estimates for its predictions, which are important for practical use.
+How the Model Works
+Input: Satellite reflectance data (Rrs) from OLI, MSI, or OLCI sensors.
+Output: Simultaneous predictions of Chla, TSS, and acdom(440).
+Architecture: Five hidden layers, each with 100 nodes, using five Gaussian mixtures to model output distributions.
+Training: Uses a bagging ensemble of ten models for robust predictions.
+Results
+Accuracy: MDN achieves lower bias and uncertainty than other models, especially for TSS and acdom(440).
+Consistency: Products from different satellites are consistent within model uncertainty, especially for TSS and acdom(440). Chla estimates are more accurate from MSI and OLCI than from OLI.
+Sensitivity: The model is less sensitive to atmospheric correction uncertainties than other algorithms.
+Limitations: Local or regional models trained on specific data may outperform the global model in those areas.
+Practical Use
+Global Monitoring: The MDN model enables harmonized, global-scale monitoring of water quality indicators from multiple satellite sources.
+Local Adaptation: For best results in specific regions, retrain or fine-tune the model with local data.
+Uncertainty Awareness: Users should consider the provided uncertainty estimates, especially when comparing results across different sensors or under challenging atmospheric conditions.

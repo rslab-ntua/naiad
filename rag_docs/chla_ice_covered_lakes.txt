@@ -1,0 +1,54 @@
+Title: Winter and summer storms modify chlorophyll relationships with nutrients in seasonally ice-covered lakes
+
+Authors: Stephanie E. Hampton, Sapna Sharma, Matthew R. Brousil, Alessandro Filazzola
+
+Journal: Ecosphere, 2022, 13(11): e4272
+
+DOI: 10.1002/ecs2.4272
+
+Keywords: algal blooms, climate change, ice duration, phytoplankton, rain, runoff, snow depth, snowmelt, summer stratification, winter ecology
+
+Abstract and Main Findings:
+
+Primary productivity (algal biomass, measured as chlorophyll a) in lakes is generally tightly linked to nutrient concentrations, especially total phosphorus (TP) and total nitrogen (TN).
+Climate-driven variables, especially storms, can disrupt or modify the relationship between nutrients and algal biomass, with different effects in winter (under ice) and summer (open water).
+In winter, storms affect under-ice light conditions by altering snow and ice cover, which can limit light and thus algal growth, even when nutrients are available.
+In summer, storms and higher temperatures are associated with higher chlorophyll, likely due to increased mixing and external nutrient loading.
+The study used the Ecology Under Lake Ice (EULI) dataset, covering 84 seasonally ice-covered lakes in the Northern Hemisphere, with data from 1954–2015 (winter) and 1958–2015 (summer).
+Methods:
+
+Data sources: EULI dataset for in situ lake measurements (chlorophyll a, water temperature, total nitrogen, total phosphorus), and gridded climate datasets for precipitation, air temperature, and surface level pressure (SLP).
+Climate proxies: SLP variance used as a proxy for wind/storminess; precipitation as a proxy for snow/rain input.
+Data harmonization: All variables were averaged within the photic zone for each season and lake. Chlorophyll a, TN, and TP were log10-transformed as log10(x + 0.1) before modeling.
+Statistical analysis: Random forest and regression tree models were used to identify the most important predictors of chlorophyll a in both winter and summer.
+Key Results:
+
+In both winter and summer, total phosphorus (TP) was the most important predictor of chlorophyll a, followed by total nitrogen (TN).
+In winter, higher under-ice chlorophyll a was associated with conditions that promote clear ice (low precipitation, low storminess, cold air temperatures) and with less snow cover (low precipitation, windy conditions that remove snow).
+In summer, higher chlorophyll a was associated with higher water temperatures, higher TP, and stormy conditions (high precipitation and SLP variance) that promote mixing and nutrient input.
+The effect of storms differs by season: in winter, storms can reduce light and limit algal growth; in summer, storms can increase nutrient availability and promote algal growth.
+Formulas and Model Details (in plain text):
+
+All chlorophyll a, total nitrogen, and total phosphorus values were log10-transformed as:
+log10(variable + 0.1)
+Regression tree R-squared calculation:
+R2 = 1 - relative error
+Example thresholds from regression trees:
+For Eurasian lakes in winter, high TN (log[TN] > 3.1, TN > 1258.93 μg/L) was associated with the highest chlorophyll a (log[chl a] = 1, chl a = 10 μg/L).
+For North American lakes in winter, high TP (log[TP] > 1.4, TP > 25.12 μg/L) and low snow cover (precipitation < 42 mm/month) were associated with higher chlorophyll a (log[chl a] = 0.62, chl a = 4.17 μg/L).
+In summer, high TP (log[TP] > 1.1, TP > 12.59 μg/L) and high precipitation (>64 mm/month) were associated with the highest chlorophyll a (log[chl a] = 1.6, chl a = 39.81 μg/L).
+Highest summer chlorophyll a observed at water temperatures ≥ 21°C (log[chl a] = 1.7, chl a = 50.12 μg/L).
+Variable importance (from random forest models):
+Winter: TP > TN > SLP variance (windiness) > precipitation
+Summer: TP > TN > water temperature > precipitation > SLP variance
+Limitations:
+
+The study used climate proxies (SLP variance, precipitation) for storminess and snow/ice conditions due to lack of direct measurements.
+Dissolved organic matter, another important factor for primary productivity, was not included due to data limitations.
+The dataset is biased toward North American and European lakes.
+Conclusions:
+
+Nutrients (especially phosphorus) remain the primary driver of algal biomass in both winter and summer.
+In winter, light limitation due to snow and ice cover can override the effect of nutrients, especially during and after storms.
+In summer, storms and higher temperatures generally promote higher algal biomass by increasing nutrient availability and mixing.
+As climate change alters the frequency and intensity of storms and reduces ice cover duration, the balance between light and nutrient limitation in lakes is expected to shift, with important implications for algal blooms and water quality.

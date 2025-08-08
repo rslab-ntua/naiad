@@ -1,0 +1,98 @@
+Optical models for remote sensing of chromophoric dissolved organic matter (CDOM) absorption in Poyang Lake
+Xu et al., ISPRS Journal of Photogrammetry and Remote Sensing, 2018
+
+Abstract & Objectives
+CDOM is a key aquatic component, affecting biogeochemical cycles, primary production, and UV protection.
+The study develops and validates models for estimating CDOM absorption at 355 nm (ag(355)) in Poyang Lake, China, using in situ reflectance and water samples.
+Models are tailored for clean (TSM < 10 mg/L) and turbid (TSM ≥ 10 mg/L) water, using band ratios from field and simulated satellite data (Sentinel-2 MSI, Landsat-8 OLI).
+Objectives:
+Characterize CDOM absorption and water reflectance spectra to identify sensitive band ratios for remote sensing.
+Establish and evaluate algorithms using simulated Sentinel-2 and Landsat-8 bands for CDOM estimation.
+Assess the potential of these algorithms for CDOM retrieval in floodplain lakes and wetlands.
+Study Area & Sampling
+Poyang Lake: Largest freshwater lake in China, complex hydrology, significant seasonal variation, affected by both natural and anthropogenic factors.
+Sampling: 92 samples from four areas (A–D) during 12 cruises (Aug 2015–Jul 2016). Surface water (0–50 cm) collected, with in situ reflectance measured (350–2500 nm, 1 nm interval) using Fieldspec 4 spectroradiometer.
+Water quality parameters measured: CDOM absorption (ag(355), ag(400), ag(440)), total suspended matter (TSM), chlorophyll-a (Chl-a), organic/inorganic suspended matter (OSM/ISM).
+Methods
+Field Spectroscopy & Water Quality
+Reflectance measurement: Above-water, with corrections for sky and reference panel radiance.
+Remote sensing reflectance (Rrs):
+Rrs = Lw / Ed(0+)
+Lw = water-leaving radiance
+Ed(0+) = downwelling irradiance
+CDOM absorption coefficient:
+a'_g(lambda) = 2.303 * D(lambda) / l
+a_g(lambda) = a'_g(lambda) - a'_g(700)
+D(lambda) = optical density
+l = path length (0.1 m in this study)
+Spectral slope of CDOM:
+a_g(lambda) = a_g(lambda0) * exp[-Sg * (lambda - lambda0)]
+lambda0 = 440 nm
+Sg = fitted exponential decay parameter
+Satellite Band Simulation
+Sentinel-2 MSI: 13 bands (10–60 m resolution), atmospheric correction with Sen2Cor to obtain BOA reflectance.
+Band simulation:
+Rb(i) = integral from lambda_min to lambda_max of [SRF(lambda) * Rrs(lambda) d(lambda)] divided by integral from lambda_min to lambda_max of [SRF(lambda) d(lambda)]
+SRF(lambda) = sensor’s spectral response function
+Model Development
+Band ratio models: Empirical relationships between band ratios and ag(355), developed separately for clean and turbid water.
+Model calibration/validation: 2/3 of samples for calibration, 1/3 for validation, using r², RMSE, and %RMSE as metrics.
+Key Results
+Water Quality
+ag(355): Mean 2.31 ± 0.40 m⁻¹ (range: 1.70–3.33 m⁻¹)
+TSM: Mean 31.2 ± 26.1 mg/L (range: 3.6–114 mg/L)
+Chl-a: Mean 5.66 ± 4.88 μg/L (range: 0.37–21.9 μg/L)
+Spectral slopes: S275-295, S350-400, S400-600 all around 0.016 nm⁻¹
+Model Performance (Field Data)
+Best band ratios:
+Clean water: R(689)/R(497), r = 0.799, r² = 0.70
+Turbid water: R(767)/R(826), r = 0.802, r² = 0.73
+Validation:
+Clean water: %RMSE = 13.2%
+Turbid water: %RMSE = 11.6%
+Model Performance (Simulated Satellite Bands)
+Sentinel-2 MSI:
+Clean water: B4/B2 or B5/B2 (best: B4/B2, r² = 0.70, RMSE = 0.24 m⁻¹, %RMSE = 9.5%)
+Turbid water: B7/B8 or B7/B8A (best: B7/B8, r² = 0.34, RMSE = 0.29 m⁻¹, %RMSE = 12.8%)
+Landsat-8 OLI:
+Clean water: B4/B2 (r² = 0.62)
+Turbid water: B4/B5 (r² = 0.13, much lower accuracy than Sentinel-2)
+Validation (Sentinel-2):
+Clean water: B5/B2, r² = 0.70, RMSE = 0.31 m⁻¹, %RMSE = 12.5%
+Turbid water: B7/B8, r² = 0.45, RMSE = 0.26 m⁻¹, %RMSE = 11.7%
+Application Example
+Sentinel-2 image (July 26, 2016): Used to map TSM and ag(355) spatially.
+TSM retrieval: Single-band B7 algorithm, r² = 0.81, RMSE = 5.72 mg/L, %RMSE = 27.7%
+CDOM retrieval: Band ratio models applied after separating clean/turbid water by TSM.
+Discussion & Insights
+CDOM retrieval in turbid inland waters is challenging due to overlapping absorption by Chl-a and TSM.
+Band ratio models that distinguish between clean and turbid water improve accuracy.
+ag(355) is the most sensitive and reliable absorption coefficient for CDOM remote sensing in this context.
+Sentinel-2 outperforms Landsat-8 for CDOM retrieval, especially in turbid water, due to additional narrow bands in the red/NIR and higher spatial resolution.
+Correlation analysis: In turbid water, CDOM is negatively correlated with TSM and OSM, positively with Chl-a.
+Spectral features: The NIR reflectance peak (~810 nm) is influenced by pure water absorption and high scattering particles.
+Key Formulas (Plain Text)
+Remote sensing reflectance:
+Rrs = Lw / Ed(0+)
+CDOM absorption coefficient:
+a'_g(lambda) = 2.303 * D(lambda) / l
+a_g(lambda) = a'_g(lambda) - a'_g(700)
+Spectral slope:
+a_g(lambda) = a_g(lambda0) * exp[-Sg * (lambda - lambda0)]
+Band simulation:
+Rb(i) = [integral from lambda_min to lambda_max of (SRF(lambda) * Rrs(lambda) d(lambda))] / [integral from lambda_min to lambda_max of (SRF(lambda) d(lambda))]
+Model examples (from Table 5):
+For Sentinel-2A, clean water:
+ag(355) = 1.3439 * exp(0.6851 * (B4/B2))
+ag(355) = 1.4883 * exp(0.6674 * (B5/B2))
+For Sentinel-2A, turbid water:
+ag(355) = 3.4556 * (B7/B8) - 2.0356
+ag(355) = 1.1629 * (B7/B8A) + 0.178
+For Landsat-8, clean water:
+ag(355) = 1.3338 * (B4/B2) + 1.0426
+For Landsat-8, turbid water:
+ag(355) = 0.4468 * ln(B4/B5) + 1.4605
+Conclusions
+Band ratio models (R(689)/R(497) for clean, R(767)/R(826) for turbid) are effective for estimating ag(355) in Poyang Lake.
+Sentinel-2 MSI is recommended for CDOM monitoring in complex floodplain lakes due to better performance and spatial resolution.
+The study provides a foundation for spatial and temporal monitoring of CDOM using remote sensing in large, optically complex lakes.

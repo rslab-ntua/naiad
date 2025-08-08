@@ -1,0 +1,66 @@
+Title: First Experiences in Mapping Lake Water Quality Parameters with Sentinel-2 MSI Imagery
+
+Authors: Kaire Toming, Tiit Kutser, Alo Laas, Margot Sepp, Birgot Paavel, Tiina Nõges
+
+Abstract and Purpose:
+This study tests the suitability of Sentinel-2 Multispectral Imager (MSI) data for mapping lake water quality parameters. In situ data for chlorophyll a (Chl a), water color, colored dissolved organic matter (CDOM), and dissolved organic carbon (DOC) from 11 Estonian lakes were compared with band ratio algorithms derived from Sentinel-2 Level-1C (top of atmosphere) and Level-2A (atmospherically corrected) images. The study evaluates the correlation between satellite-derived indices and in situ measurements, and assesses the performance of the Sen2cor atmospheric correction.
+
+Key Concepts and Methods:
+
+Sentinel-2 MSI provides 10 m, 20 m, and 60 m spatial resolution imagery in 13 spectral bands with 12-bit radiometric resolution.
+In situ data were collected from 9 small and 2 large lakes in Estonia in August 2015, including Chl a, CDOM, DOC, and water color.
+DOC was measured using filtration and TOC analysis; CDOM was characterized by spectrophotometric absorption; water color was measured by absorbance at 410 nm or 420 nm; Chl a was measured spectrophotometrically at 665 nm.
+Sentinel-2 Level-1C (L1C) and Level-2A (L2A, Sen2cor corrected) images were used. 3x3 cloud-free pixels at each sampling point were averaged for analysis.
+Band ratio algorithms were used:
+Height of the 705 nm peak (band 5) against the baseline of bands 4 (665 nm) and 6 (740 nm) for Chl a estimation.
+Green to red band ratio (band 3 to band 4) for CDOM, DOC, and water color estimation.
+Formulas (all as plain text):
+
+CDOM concentration calculation:
+CDOM concentration = c * f(lambda) / exp( -S * (lambda - lambda0) ) * a_CDOM(lambda0)
+where:
+a_CDOM(lambda0) is the specific absorption coefficient of DOM at lambda0 = 380 nm (value: 0.565 L m^-1 mg^-1)
+S is the slope parameter (value: 0.017 nm^-1)
+c * f(lambda) is the spectrometric reading at lambda = 380 nm
+Water color:
+Water color (mg Pt L^-1) is determined by spectrophotometric absorbance at 410 nm (large lakes) or 420 nm (small lakes).
+Chlorophyll a (Chl a):
+Chl a (micrograms per liter) is measured spectrophotometrically at 665 nm from ethanol extracts.
+Height of the 705 nm peak for Chl a estimation:
+Height = band 5 value - ( (band 4 value + band 6 value) / 2 )
+Band ratio for CDOM, DOC, and water color:
+Ratio = band 3 value / band 4 value
+Example regression equations (from results):
+For Chl a (L1C): Chl a = 2231 * Height + 12.7
+For Chl a (L2A): Chl a = 169 * Height + 19.5
+For CDOM (L1C): CDOM = 537 * exp( -2.93 * Ratio )
+For CDOM (L2A): CDOM = 17.9 * exp( -0.86 * Ratio )
+For water color (L1C): Color = 25366 * exp( -4.53 * Ratio )
+For water color (L2A): Color = 19.9 * exp( -0.17 * Ratio )
+For DOC (L1C): DOC = 432 * exp( -2.24 * Ratio )
+For DOC (L2A): DOC = 29.6 * exp( -0.65 * Ratio )
+Where:
+
+Height is the height of the 705 nm peak as defined above
+Ratio is the band 3 to band 4 value as defined above
+exp(x) means the exponential function of x
+Results:
+
+Chl a, CDOM, DOC, and water color in the studied lakes ranged widely (see Table 3 in the paper for details).
+The height of the 705 nm peak (band 5) correlated well with Chl a (R^2 = 0.83 for L2A, R^2 = 0.80 for L1C).
+The green to red band ratio (band 3 / band 4) correlated with CDOM (R^2 = 0.72 for L1C), DOC (R^2 = 0.92 for L1C), and water color (R^2 = 0.52 for L1C).
+Correlations were generally stronger for top of atmosphere (L1C) data than for atmospherically corrected (L2A) data, indicating limitations in the Sen2cor atmospheric correction for lakes.
+Limitations and Considerations:
+
+No concurrent in situ reflectance measurements were available for direct validation of atmospheric correction.
+The in situ dataset was limited in number but covered a wide range of optical water properties.
+Atmospheric correction (Sen2cor) reduced the correlation between band ratio algorithms and water quality parameters.
+The study demonstrates the potential of Sentinel-2 MSI for lake water quality monitoring, especially for Chl a, CDOM, DOC, and water color, but highlights the need for improved atmospheric correction for aquatic environments.
+Conclusions:
+
+Sentinel-2 MSI data can be used to map Chl a, CDOM, DOC, and water color in lakes using established band ratio algorithms.
+The 705 nm band is effective for Chl a estimation.
+The green to red band ratio is effective for CDOM, DOC, and water color estimation.
+Atmospheric correction remains a challenge for aquatic remote sensing with Sentinel-2.
+Keywords:
+Sentinel-2, lakes, remote sensing, Sen2cor, chlorophyll a, CDOM, dissolved organic carbon, water color, water monitoring

@@ -1,0 +1,57 @@
+Title: Discharge Estimation Using Harmonized Landsat and Sentinel-2 Product: Case Studies in the Murray Darling Basin
+
+Authors: Zhuolin Shi, Yun Chen, Qihang Liu, Chang Huang
+
+Abstract and Purpose:
+This study evaluates the use of the C/M method (ratio of calibration land pixel to river measurement pixel in the NIR band) with the Harmonized Landsat and Sentinel-2 (HLS) surface reflectance product to estimate river discharge in small rivers (30–100 m width) in the Murray-Darling Basin, Australia. The method is validated using two years of data.
+
+Key Concepts and Methods:
+
+The C/M method uses the ratio between a stable land pixel (Calibration, C) and a river pixel (Measurement, M) in the NIR band.
+Linear regression is applied between the C/M time series and observed discharge to build a site-specific model.
+Data used: HLS surface reflectance product (combines Landsat-8 and Sentinel-2, 30 m resolution, NIR band), observed daily discharge data from two gauges: 410130 (Murrumbidgee River, ~60 m wide) and 414200 (Murray River, ~90 m wide).
+2017 water year for modeling, 2018 for validation.
+Landsat-8 NIR: Band 5 (845–885 nm). Sentinel-2 NIR: Band 8A (865 nm, resampled to 30 m).
+C is the average of multiple stable land pixels (lowest 5% coefficient of variation, CV, in NIR reflectance).
+M is the single river pixel with highest Pearson correlation (r) between C/M and observed discharge (p < 0.05).
+Region of interest is 31 × 31 pixels (~450 m from gauge).
+Formulas (all as plain text):
+
+Coefficient of Variation (CV):
+CV = standard deviation / mean
+
+Root Mean Square Error (RMSE):
+RMSE = sqrt( sum over t=1 to n of (Qrs_t - Qg_t)^2 / n )
+
+Relative Root Mean Square Error (RRMSE):
+RRMSE = (RMSE / average Qg) * 100%
+
+Nash-Sutcliffe Efficiency (NSE):
+NSE = 1 - ( sum over t=1 to T of (Qg_t - Qrs_t)^2 ) / ( sum over t=1 to T of (Qg_t - average Qg)^2 )
+
+Where:
+Qrs or Qrs_t = remotely sensed estimated discharge (at time t)
+Qg or Qg_t = observed discharge (at time t)
+average Qg = mean of observed discharge
+n = number of observations
+T = total number of time steps
+
+Results:
+
+Gauge 410130 (~60 m): RMSE = 4.61 m³/s, RRMSE = 53%, NSE = 0.24 (moderate accuracy).
+Gauge 414200 (~90 m): RMSE = 20.87 m³/s, RRMSE = 19%, NSE = 0.69 (good accuracy).
+The method works better for wider rivers with higher base flow.
+The model built on 2017 data was validated on 2018 data.
+The C/M method with HLS data can estimate discharge in small rivers, especially when river width is sufficient for the 30 m pixel size.
+Limitations and Considerations:
+
+The C/M method requires a time series of observed discharge for model calibration.
+Cloud cover can reduce the number of usable optical images.
+The method is less accurate for very small rivers or those with significant sediment changes.
+Resampling Sentinel-2 NIR from 10 m to 30 m may reduce sensitivity.
+The method's accuracy may vary with river morphology.
+Conclusions:
+
+The HLS-based C/M method is effective for estimating discharge in small rivers (30–100 m width).
+Blending multisource NIR data (Landsat-8 and Sentinel-2) increases temporal resolution and enables more frequent discharge estimation.
+The approach is promising for ungauged or data-scarce regions, provided a similar gauged basin exists for model transfer.

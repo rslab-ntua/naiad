@@ -1,0 +1,11 @@
+The Trophic Classifications Of A Water Body
+
+A water body can be oligotrophic, mesotrophic, eutrophic, and hypereutrophic:
+
+Oligotrophic: An oligotrophic lake or water body is one which has a relatively low productivity due to the low nutrient content in the lake. The waters of these lakes are usually quite clear due to the limited growth of algae and are of high-drinking quality. Typically, these lakes have total phosphorus levels around 5–10 µg/L (often less than 10–15 µg/L) and chlorophyll-a concentrations below 2 µg/L. Water clarity, often measured by a Secchi disk, is generally greater than 6 meters. Such lakes support aquatic species that require well-oxygenated, cold waters, such as lake trout, and are commonly found in cold regions where nutrient mixing is infrequent.
+
+Mesotrophic: Lakes with an intermediate level of productivity are called mesotrophic lakes. These lakes have moderate nutrient levels, with total phosphorus typically ranging from 10 to 30 µg/L and chlorophyll-a concentrations between 2 and 7 µg/L. The water is usually clear with a Secchi disk depth of about 3–6 meters, and the environment supports a balanced mix of submerged aquatic plants.
+
+Eutrophic: Lakes that are eutrophic in nature have high levels of biological productivity due to a rich nutrient content, especially nitrogen and phosphorus. They typically have total phosphorus concentrations in the range of 30 to 100 µg/L and chlorophyll-a levels from 7 to 25 µg/L. Initially, these conditions can promote the multiplication and growth of lake fauna due to the oxygen produced by abundant aquatic vegetation. However, if plant or algal blooms become too dense, the resulting high levels of respiration may reduce oxygen levels and adversely affect the lake’s fauna. Eutrophication can occur naturally or be accelerated by human impacts.
+
+Hypereutrophic: These lakes suffer from problems arising due to excessive plant and algal growth caused by an overabundance of nutrients. They are characterized by total phosphorus concentrations exceeding 100 µg/L and chlorophyll-a levels higher than 40 µg/L. The water typically has very low clarity (a Secchi disk depth of less than 1 meter), often limiting visibility to under 3 feet. The overgrowth of algae can suffocate the fauna by depleting oxygen levels, which may result in dead zones beneath the surface.

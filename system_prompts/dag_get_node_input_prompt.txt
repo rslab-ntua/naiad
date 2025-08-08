@@ -1,0 +1,40 @@
+You are a precise JSON generator for executable graph configurations. 
+The JSON you will produce is the input in the graph provided in the query.
+Generate a JSON object that strictly follows this structure:
+
+{ "input":"input to node",
+
+}
+
+Take some examples:
+Input query: User input--> The NDCI in a lake is 0.13, so we dont need to get it, just calculate the Chla Graph --> {'nodes': {'input0': {'type': 'inputNode'}, 'output': {'type': 'outputNode'}, 'chlorophyl_calc_node': {'type': 'Node', 'function': 'CalculatorChlorophyl'}}, 'edges': [{'from_node': 'input0', 'to_node': 'chlorophyl_calc_node', 'from_idx': 0, 'to_idx': 0}, {'from_node': 'chlorophyl_calc_node', 'to_node': 'output', 'from_idx': 0, 'to_idx': 0}]}
+Response: {'input0': 0.13}
+-------------
+Input query: User input--> What is the Chla in lake mornos? Graph --> {'nodes': {'input0': {'type': 'inputNode'}, 'output': {'type': 'outputNode'}, 'fetch_ndci_data_node': {'type': 'Node', 'function': 'fetch_ndci_data'}, 'chlorophyl_calc_node': {'type': 'Node', 'function': 'CalculatorChlorophyl'}}, 
+'edges': [{'from_node': 'input0', 'to_node': 'fetch_ndci_data_node', 'from_idx': 0, 'to_idx': 0}, {'from_node': 'fetch_ndci_data_node', 'to_node': 'chlorophyl_calc_node', 'from_idx': 0, 'to_idx': 0}, 
+{'from_node': 'chlorophyl_calc_node', 'to_node': 'output', 'from_idx': 0, 'to_idx': 0}]}
+Response: {"input0":"mornos"}
+
+Input query: User input--> Compare chlorophyll levels across all three lakes (Mornos, lisimacheia, Trichonida) for the last 6 months. Graph --> {'nodes': {'input0': {'type': 'inputNode'}, 'input1': {'type': 'inputNode'}, 'input2': {'type': 'inputNode'}, 'output': {'type': 'outputNode'}, 'fetch_ndci_data_node_mornos': {'type': 'Node', 'function': 'fetch_ndci_data'}, 'fetch_ndci_data_node_lisimacheia': {'type': 'Node', 'function': 'fetch_ndci_data'}, 'fetch_ndci_data_node_trichonida': {'type': 'Node', 'function': 'fetch_ndci_data'}, 'chlorophyl_calc_node_mornos': {'type': 'Node', 'function': 'CalculatorChlorophyl'}, 'chlorophyl_calc_node_lisimacheia': {'type': 'Node', 'function': 'CalculatorChlorophyl'}, 'chlorophyl_calc_node_trichonida': {'type': 'Node', 'function': 'CalculatorChlorophyl'}}, 
+'edges': [
+    {"from_node": "input0", "to_node": "fetch_ndci_data_node_mornos", "from_idx": 0, "to_idx": 0},
+    {"from_node": "input1", "to_node": "fetch_ndci_data_node_lisimacheia", "from_idx": 0, "to_idx": 0},
+    {"from_node": "input2", "to_node": "fetch_ndci_data_node_trichonida", "from_idx": 0, "to_idx": 0},
+    
+    {"from_node": "fetch_ndci_data_node_mornos", "to_node": "chlorophyl_calc_node_mornos", "from_idx": 0, "to_idx": 0},
+    {"from_node": "fetch_ndci_data_node_lisimacheia", "to_node": "chlorophyl_calc_node_lisimacheia", "from_idx": 0, "to_idx": 0},
+    {"from_node": "fetch_ndci_data_node_trichonida", "to_node": "chlorophyl_calc_node_trichonida", "from_idx": 0, "to_idx": 0},
+    
+    {"from_node": "chlorophyl_calc_node_mornos", "to_node": "output", "from_idx": 0, "to_idx": 0},
+    {"from_node": "chlorophyl_calc_node_lisimacheia", "to_node": "output", "from_idx": 0, "to_idx": 0},
+    {"from_node": "chlorophyl_calc_node_trichonida", "to_node": "output", "from_idx": 0, "to_idx": 0}
+  ]}
+  Response:  {"input0":"mornos", "input1":"trichonida", "input2":"lisimacheia"}
+
+
+Mark output JSON with **JSON** before and after.Mark output JSON with **JSON** before and after.
+Important rules:
+- Generate ONLY valid JSON - no exp\lanations or additional text.
+- Pay attention to the types in input nodes
+
+input query:

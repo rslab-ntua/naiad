@@ -1,0 +1,44 @@
+Estimating Total Suspended Solids (TSS) in Inland and Coastal Waters from Sentinel-2 MSI: A Semi-Analytical Approach
+
+Key Points
+
+Objective: Develop and validate a semi-analytical method to estimate TSS from Sentinel-2 MSI imagery, applicable to a wide range of water types (clear to extremely turbid) and suitable for small inland/coastal water bodies.
+Motivation: Most global lakes are too small for medium-resolution sensors (MERIS, OLCI, MODIS). Sentinel-2 MSI offers higher spatial resolution (10–20 m), enabling monitoring of small lakes, rivers, estuaries, and nearshore waters.
+Data: 1265 in situ Rrs-TSS pairs from 69 lakes and 11 coastal waters worldwide. Synthetic datasets for algorithm calibration and validation. 17 Sentinel-2 MSI images and 314 MSI images for time-series analysis. 674 Sentinel-3 OLCI images for comparison.
+Atmospheric Correction: Used C2RCC processor in SNAP for MSI and OLCI images.
+Method Overview
+
+Estimate Rrs(620) from Rrs(665):
+MSI lacks a 620 nm band. Rrs(620) is estimated from Rrs(665) using a third-order polynomial:
+Rrs(620) = 169.385 * Rrs(665)^3 - 15.576 * Rrs(665)^2 + 1.317 * Rrs(665) + 0.000148
+Water Type Classification:
+Waters are classified into four types (clear, moderately turbid, highly turbid, extremely turbid) using Rrs at 490, 560, 620, and 740 nm.
+Estimate bbp (particulate backscattering coefficient):
+Use the Quasi-Analytical Algorithm (QAA) to estimate bbp at a reference band, which varies by water type.
+Reference bands: 560 nm (clear), 665 nm (moderately turbid), 740 nm (highly turbid), 865 nm (extremely turbid).
+Estimate TSS:
+TSS = 1 / (b_bp(lambda) * bbp(lambda))
+b_bp values are optimized for MSI bands using synthetic data.
+Validation and Results
+
+Validation datasets: Synthetic data, in situ data, and 40 satellite matchups.
+Performance:
+Median Absolute Percentage Error (MAPE): Synthetic: 14.88 percent, In situ: 31.50 percent, Satellite matchups: 41.69 percent
+The method outperforms existing semi-analytical (Nechad et al. 2010), empirical, and machine learning (MDN, SOLID) methods, especially in clear and extremely turbid waters.
+MSI-derived TSS is generally closer to in situ TSS than OLCI-derived TSS, especially in small or spatially heterogeneous water bodies.
+Advantages of MSI
+
+High spatial resolution enables monitoring of small lakes, rivers, estuaries, and nearshore waters, which are not observable with medium-resolution sensors.
+More detailed TSS maps: MSI captures fine-scale spatial variations, such as river plumes, sediment resuspension, and anthropogenic features (for example, bridge effects).
+Collaborative use with OLCI: OLCI provides higher temporal frequency, MSI provides higher spatial detail.
+Limitations and Recommendations
+
+Atmospheric correction accuracy is critical; errors in Rrs propagate to TSS estimates.
+Water type misclassification at boundaries can cause minor errors, but the method is robust to small uncertainties in Rrs(620).
+Users are encouraged to use local or in situ b*_bp values if available for improved accuracy.
+Conclusions
+
+The proposed semi-analytical method enables accurate, high-resolution TSS mapping from Sentinel-2 MSI for a wide range of water types.
+MSI is particularly valuable for monitoring small and dynamic inland/coastal waters.
+The method is robust, outperforms existing approaches, and is suitable for long-term and event-based TSS monitoring.
+Both MSI and OLCI can be used collaboratively for comprehensive TSS monitoring.

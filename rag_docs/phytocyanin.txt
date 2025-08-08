@@ -1,0 +1,91 @@
+Dynamic Monitoring of Phycocyanin (PC) in Chaohu Lake, China Using Sentinel-3 OLCI
+Abstract
+Phycocyanin (PC) is a pigment unique to cyanobacteria and serves as a key indicator for cyanobacterial blooms (CBs) in water. This study developed a PC concentration retrieval model for Sentinel-3 OLCI images and applied it to Chaohu Lake, China, using data from May 2016 to November 2021. The model, based on gradient boosting regression, achieved high accuracy (R² = 0.86, RMSE = 45.44 μg/L, MAPE = 26.27%). Results show that PC concentrations are highest in the western part of the lake during summer and autumn, mainly due to higher nutrient levels and prevailing winds. The study also found a strong temporal correlation between PC concentration and CBs area, with a PC threshold of 303.9 μg/L necessary for CBs outbreak. Sentinel-3 OLCI enables high-frequency, dynamic monitoring of PC, providing early warning for CBs in inland waters.
+
+1. Introduction
+Background: Water pollution in inland lakes has increased due to human activity and climate change, leading to eutrophication and frequent cyanobacterial blooms (CBs).
+Impact: CBs harm lake ecosystems, produce toxins (microcystins), kill aquatic life, and threaten human health.
+Role of Vegetation: Aquatic vegetation can absorb nutrients, inhibit algae growth, and reduce CBs risk.
+Monitoring Need: Real-time, large-scale monitoring of CBs and water quality is essential for prevention and management.
+Indicators: While chlorophyll-a is a general indicator of algal biomass, phycocyanin (PC) is specific to cyanobacteria and better reflects their abundance and water eutrophication.
+Remote Sensing: Traditional field sampling is limited; remote sensing offers rapid, continuous, and large-scale monitoring of PC using satellite reflectance data (Rrs).
+PC Detection: PC has a strong absorption at 620 nm, enabling its detection via remote sensing.
+Model Types: Retrieval models include empirical (band ratios, baseline), semi-analytical (physically based), and machine learning (ML) models.
+Satellite Data: Landsat, MERIS, MODIS, and Sentinel series have been used. Sentinel-3 OLCI offers high temporal and spectral resolution, with a 620 nm band ideal for PC monitoring.
+Research Gap: Few studies have used Sentinel-3 OLCI for long-term, quantitative PC monitoring and its relationship with CBs.
+2. Materials and Methods
+2.1 Study Area
+
+Chaohu Lake: One of China’s five largest freshwater lakes, located in Anhui Province, divided into western, middle, and eastern parts.
+Area: ~780.7 km², average depth 3.1 m, max depth 6.78 m.
+Main inflows: Nanfei, Pai, Hangbu, Zhao, and Zhegao Rivers.
+Eutrophication and CBs are severe, especially in the northwest. Bloom period: April–October.
+3. Research Data
+
+3.1 Field Measurements
+
+Water samples collected on four dates (Dec 2019, Jun 2020, Nov 2020, Mar 2021), 138 samples total.
+Sampling: 0.5 m depth, >2 km from shore, 1.5 L per site, GPS recorded.
+PC measured by UV–visible spectrophotometry (absorbance at 615, 652, 750 nm), using a modified Bennett and Bogorad (1973) formula.
+3.2 Remote Sensing Images
+
+Sentinel-3A/B OLCI Level-1B images (May 2016–Nov 2021), 413 cloud-free scenes.
+OLCI: 21 bands, high SNR, 620 nm band for PC detection, ~1.8-day revisit.
+3.3 Other Data
+
+Meteorological: Air temperature, sunshine, precipitation, wind (China Meteorological Data).
+Water level: Hefei city flood/drought info.
+Nutrients: TN, TP, NH₃–N, CODMn (Chaohu Administration Bureau).
+3.4 Methods
+
+Image Processing: Radiometric correction with C2RCC algorithm (SNAP software) to obtain Rrs.
+CBs Extraction: NDVI calculated from Oa8 (665 nm) and Oa16 (779 nm) bands; NDVI method validated (accuracy 85.2%, Kappa 0.70).
+PC Retrieval Models: Empirical (band combinations, PC index) and ML (RF, KNN, GBT, SVR, DNN). Band combinations with R > 0.6 used as features.
+Model Selection: Grid search for optimal ML parameters; 10-fold cross-validation for evaluation.
+Statistical Metrics: R², RMSE, MAPE.
+Spatiotemporal Analysis: GIS and spatial statistics for seasonal and interannual PC variation.
+CBs Relationship: Redundancy analysis (RDA) to link PC with meteorology, hydrology, nutrients; PC risk levels per WHO standards.
+4. Results
+4.1 CBs Extraction Accuracy
+
+NDVI method accurately identifies CBs regions, matching visual interpretation.
+4.2 PC Retrieval Model Performance
+
+GBT model outperforms others (R² = 0.86, RMSE = 45.44 μg/L, MAPE = 26.27%).
+GBT slightly underestimates high PC (>300 μg/L) and overestimates low PC (<50 μg/L), but overall spatial consistency is high.
+4.3 Spatiotemporal Variation of PC
+
+Spatial:
+Spring: PC low (50–150 μg/L), higher in northwest.
+Summer: PC high (100–300 μg/L), peaks in north.
+Autumn: High PC shifts southward.
+Winter: PC low, little spatial difference.
+Western part has highest PC in summer (up to 363.1 μg/L), lowest in east in winter (55.3 μg/L).
+Interannual:
+Nonbloom period: PC <130 μg/L, little variation.
+Bloom period: PC >150 μg/L, more variation; highest in 2019 (194.8 μg/L), lowest in 2017 (114.3 μg/L).
+TN and NH₃–N are most correlated with PC (R² = 0.66, 0.72).
+Prevailing winds affect PC spatial distribution (southerly/southeasterly in summer, northeast in autumn).
+Meteorological Influence:
+Air temperature is the main driver (71% contribution), followed by precipitation (15%) and water level (12.8%).
+Air temperature and precipitation positively correlated with PC; wind speed negatively correlated.
+4.4 Relationship Between PC and CBs
+
+PC concentration and CBs area proportion are highly correlated (r ≈ 0.6).
+PC threshold for CBs outbreak: 303.9 μg/L.
+CBs risk levels (per WHO):
+Level I: <30 μg/L
+Level II: 30–90 μg/L
+Level III: 90–303.9 μg/L
+Level IV: >303.9 μg/L (CBs outbreak likely)
+High-risk areas: Western lake in summer/autumn, north-central and southeast regions.
+5. Discussion
+Nutrient Levels: High PC in western lake matches high nutrient input and CBs risk.
+Wind: Dominant wind direction redistributes cyanobacteria and nutrients, affecting PC patterns.
+Meteorology: Air temperature is the strongest factor for PC and CBs dynamics.
+Risk Assessment: PC is a reliable indicator for CBs risk and early warning; management should focus on nutrient control, especially in high-risk areas.
+6. Conclusion
+Developed a high-accuracy PC retrieval model for Sentinel-3 OLCI.
+PC monitoring reveals strong spatial, seasonal, and interannual variation in Chaohu Lake, driven by nutrients, wind, and meteorology.
+PC concentration is a robust indicator for CBs risk and can guide early warning and management.
+Management should prioritize nutrient control in high-risk regions and prepare emergency response for CBs outbreaks.

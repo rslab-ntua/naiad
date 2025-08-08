@@ -1,0 +1,45 @@
+Dataset: Chlorophyll-a concentrations for Lake Mornos from 2013 to 2022.
+
+Each entry includes:
+- Date (system:time_start)
+- Chlorophyll_a (μg/L)
+- Year
+
+Detailed rows for 2013:
+Row 1: system:time_start: 2013-07-10 00:00:00, Chlorophyll_a: 1.035, year: 2013.
+Row 2: system:time_start: 2013-08-13 00:00:00, Chlorophyll_a: 0.632, year: 2013.
+Row 3: system:time_start: 2013-09-11 00:00:00, Chlorophyll_a: 0.935, year: 2013.
+Row 4: system:time_start: 2013-10-24 00:00:00, Chlorophyll_a: 1.790, year: 2013.
+
+Detailed rows for 2014:
+Row 1: system:time_start: 2014-07-17 00:00:00, Chlorophyll_a: 0.900, year: 2014.
+Row 2: system:time_start: 2014-08-20 00:00:00, Chlorophyll_a: 0.699, year: 2014.
+Row 3: system:time_start: 2014-09-24 00:00:00, Chlorophyll_a: 1.137, year: 2014.
+
+Detailed rows for 2015:
+Row 1: system:time_start: 2015-05-26 00:00:00, Chlorophyll_a: 0.628, year: 2015.
+Row 2: system:time_start: 2015-06-24 00:00:00, Chlorophyll_a: 1.018, year: 2015.
+Row 3: system:time_start: 2015-08-26 00:00:00, Chlorophyll_a: 0.355, year: 2015.
+Row 4: system:time_start: 2015-09-22 00:00:00, Chlorophyll_a: 0.849, year: 2015.
+Row 5: system:time_start: 2015-10-20 00:00:00, Chlorophyll_a: 1.108, year: 2015.
+
+Detailed rows for 2017:
+Row 1: system:time_start: 2017-10-10 00:00:00, Chlorophyll_a: 1.930, year: 2017.
+
+Detailed rows for 2018:
+Row 1: system:time_start: 2018-08-01 00:00:00, Chlorophyll_a: 1.130, year: 2018.
+Row 2: system:time_start: 2018-10-17 00:00:00, Chlorophyll_a: 1.260, year: 2018.
+
+Detailed rows for 2019:
+Row 1: system:time_start: 2019-09-23 00:00:00, Chlorophyll_a: 0.680, year: 2019.
+
+Detailed rows for 2020:
+Row 1: system:time_start: 2020-07-14 00:00:00, Chlorophyll_a: 0.460, year: 2020.
+
+Detailed rows for 2021:
+Row 1: system:time_start: 2021-06-28 00:00:00, Chlorophyll_a: 0.560, year: 2021.
+Row 2: system:time_start: 2021-09-27 00:00:00, Chlorophyll_a: 0.700, year: 2021.
+
+Detailed rows for 2022:
+Row 1: system:time_start: 2022-08-29 00:00:00, Chlorophyll_a: 1.530, year: 2022.
+Row 2: system:time_start: 2022-09-19 00:00:00, Chlorophyll_a: 0.700, year: 2022.
